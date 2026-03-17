@@ -1,12 +1,13 @@
 ---
 import astroLogo from '../assets/astro.svg'
 import background from '../assets/background.svg'
-import Navigation from './Navigation.astro'
+import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro';
 ---
 
 <div id="container">
 	<img id="background" src={background.src} alt="" fetchpriority="high" />
+  <Header />
 	<main>
 		<section id="hero">
 			<a href="https://astro.build"
@@ -25,7 +26,6 @@ import Footer from '../components/Footer.astro';
 						></path></svg
 					>
 				</a>
-        <Navigation />
 			</section>
 		</section>
 	</main>

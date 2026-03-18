@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogPost from '../../components/BlogPost.astro'
+
+const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+
+export function getStaticPaths() {
+  return [
+    { params: { tag: "astro" } },
+    { params: { tag: "successes" } },
+    { params: { tag: "community" } },
+    { params: { tag: "blogging" } },
+    { params: { tag: "setbacks" } },
+    { params: { tag: "learning in public" } },
+  ];
+}
+
+const { tag } = Astro.params;
+const filteredPosts = allPosts.filter((p: any) => p.frontmatter.tags.includes(tag))
+---
+
+<Layout pageTitle={tag}>
+  <p>Posts tagged with {tag}</p>
+  <ul>
+    {filteredPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+  </ul>
+</Layout>

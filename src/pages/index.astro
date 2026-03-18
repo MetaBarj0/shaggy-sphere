@@ -3,8 +3,10 @@ import '../style/global.css'
 
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Greeting from '../components/Greeting'
 ---
 
 <Layout pageTitle="My frkng astro blog">
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 	<Welcome />
 </Layout>

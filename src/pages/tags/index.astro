@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import Menu from '../../components/Menu.astro';
 import Header from '../../components/Header.astro'
 
 const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
@@ -8,7 +7,6 @@ const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat
 ---
 
 <Layout pageTitle="tags">
-  <Menu />
   <Header />
   <div class="tags">
     {

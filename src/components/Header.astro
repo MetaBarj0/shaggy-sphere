@@ -1,8 +1,22 @@
 ---
 import Navigation from './Navigation.astro'
+import Menu from './Menu.astro'
+import ThemeIcon from './ThemeIcon.astro'
 ---
 
-<Navigation path="/" text="Home" />
-<Navigation path="/about/" text="About me..." />
-<Navigation path="/blog/" text="Ze blog" />
-<Navigation path="/tags/" text="all tagzz" />
+<header>
+  <nav>
+    <div>
+      <ThemeIcon />
+      <Menu />
+    </div>
+    <Navigation />
+  </nav>
+</header>
+
+<style>
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>

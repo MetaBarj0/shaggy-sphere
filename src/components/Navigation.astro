@@ -1,7 +1,8 @@
 ---
-const { path, text } = Astro.props
+import Link from './Link.astro'
 ---
 
-<div id="main-menu" class="nav-links">
-  <a href={path}>{text}</a>
-</div>
+<Link path="/" text="Home" />
+<Link path="/about/" text="About me..." />
+<Link path="/blog/" text="Ze blog" />
+<Link path="/tags/" text="all tagzz" />

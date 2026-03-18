@@ -1,10 +1,10 @@
 ---
 import '../style/global.css'
+
+import Layout from '../layouts/Layout.astro';
 import Menu from '../components/Menu.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-
-const pageTitle = 'About me...'
 
 const identity = {
   firstName: 'Sarah',
@@ -22,13 +22,14 @@ const goal = 3
 const skillColor = 'crimson'
 const skillFontWeight = 'bold'
 const skillTextTransform = 'uppercase'
+
+const pageTitle = "About me, I and myself..."
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
+<Layout pageTitle={pageTitle}>
+  <Menu />
+  <Header />
+  <body>
     <style define:vars={{skillColor, skillFontWeight, skillTextTransform}}>
       h1 {
         color: purple;
@@ -40,10 +41,6 @@ const skillTextTransform = 'uppercase'
         text-transform: var(--skillTextTransform);
       }
     </style>
-  </head>
-  <Menu />
-  <Header />
-  <body>
     <h1>{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
 
@@ -71,4 +68,4 @@ const skillTextTransform = 'uppercase'
     {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
   </body>
   <Footer />
-</html>
+</Layout>
